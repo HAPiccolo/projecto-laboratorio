@@ -1,0 +1,90 @@
+* {
+    /* nav queda en el border superior y laterales*/
+    margin: auto 0;
+
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #8DCCBF;
+
+}
+
+.logo img {
+    width: 200px;
+}
+
+.menu {
+    margin-left: auto;
+    /* Posiciona los botones del menu a la derecha*/
+
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.botones li {
+    padding: 0 1rem;
+    list-style: none;
+}
+
+.botones a {
+    text-decoration: none;
+    background-color: #CCFFFF;
+    padding: 5px;
+    border: solid 1px #ffffff;
+    border-radius: 6px;
+}
+
+.botones a:hover {
+    background-color: #fff;
+}
+
+
+.img-fachada {
+    width: 100%;
+}
+
+.img-fachada img {
+    width: 100%;
+    height: 93vh;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    margin-top:2rem;
+}
+
+.container-servicios{
+    max-width: 60%;
+    padding: 1rem;
+    margin: 0;
+}
+.container-contacto{
+    display: flex;
+    width: 80%;
+    padding: 1rem;
+    margin-right: 1rem;
+    flex-direction: column;
+    background-color: #CCFFFF;
+    border-radius: 10px;
+}
+.container-contacto input{
+    width: auto;
+    margin: 1rem 0;
+}
+.container-contacto textarea{
+    height: 5rem;
+}
+.container-contacto button{
+    margin: 1rem 0;
+    margin-left: auto;
+    padding: 4px 2rem;
+}
+
