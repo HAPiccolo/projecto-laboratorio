@@ -1,7 +1,6 @@
+/* Reset */
 * {
-    /* nav queda en el border superior y laterales*/
     margin: auto 0;
-
 }
 
 .nav {
@@ -9,7 +8,6 @@
     display: flex;
     flex-direction: row;
     background-color: #8DCCBF;
-
 }
 
 .logo img {
@@ -18,8 +16,6 @@
 
 .menu {
     margin-left: auto;
-    /* Posiciona los botones del menu a la derecha*/
-
 }
 
 .botones {
@@ -31,6 +27,7 @@
 .botones li {
     padding: 0 1rem;
     list-style: none;
+    position: relative; /* Para el dropdown */
 }
 
 .botones a {
@@ -45,7 +42,40 @@
     background-color: #fff;
 }
 
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #CCFFFF;
+    min-width: 160px;
+    top: 100%; /* Coloca el dropdown debajo del botón */
+    left: 0;
+    margin: 5px 8px 8px 16px;
+    z-index: 1;
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
 
+.dropdown-content li {
+    padding: 0;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    text-align: left;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Imagen de la fachada */
 .img-fachada {
     width: 100%;
 }
@@ -58,15 +88,16 @@
 .container-flex {
     display: flex;
     flex-direction: row;
-    margin-top:2rem;
+    margin-top: 2rem;
 }
 
-.container-servicios{
+.container-servicios {
     max-width: 60%;
     padding: 1rem;
     margin: 0;
 }
-.container-contacto{
+
+.container-contacto {
     display: flex;
     width: 80%;
     padding: 1rem;
@@ -75,16 +106,49 @@
     background-color: #CCFFFF;
     border-radius: 10px;
 }
-.container-contacto input{
+
+.container-contacto input {
     width: auto;
     margin: 1rem 0;
 }
-.container-contacto textarea{
+
+.container-contacto textarea {
     height: 5rem;
 }
-.container-contacto button{
+
+.container-contacto button {
     margin: 1rem 0;
     margin-left: auto;
     padding: 4px 2rem;
 }
 
+.servicios-flex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.container-urgencias{
+    max-width: 60%;
+    padding: 1rem;
+    margin: 0;
+    text-align: justify;
+}
+.container-laboratorio{
+    text-align: justify;
+    max-width: 60%;
+    padding: 1rem;
+    flex-direction: column;
+}
+.container-laboratorio img{
+    margin: 30px 1px 1px 1px;
+    width:500px;
+    height: 270px;
+
+}
+
+.container-urgencias img{
+    margin: 30px 1px 1px 1px;
+    width: 500px;
+    height: 270px;
+}
