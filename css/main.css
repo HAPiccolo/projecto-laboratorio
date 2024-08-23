@@ -32,10 +32,10 @@
 
 .botones a {
     text-decoration: none;
-    background-color: #CCFFFF;
-    padding: 5px;
-    border: solid 1px #ffffff;
-    border-radius: 6px;
+    background-color: #fff;
+    padding: 4px;
+    border: solid 1px;
+    
 }
 
 .botones a:hover {
@@ -151,4 +151,37 @@
     margin: 30px 1px 1px 1px;
     width: 500px;
     height: 270px;
+}
+
+
+
+.login {
+    background-color: #8DCCBF;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    margin-top: 5rem;
+    padding: 2rem;
+    border-radius: 4px;
+}
+.login input, button{
+    margin: 10px;
+    border: 1px solid;
+}
+.login button, input{
+    padding: 4px;
+    
+    background-color: #fff;
+}
+.login button:hover{
+    background-color: #40bea5;
+}
+.botones .login_cancel {
+    background-color: rgb(193, 60, 60);
+    color: #fff;
+}
+.botones .login_cancel:hover {
+    background-color: rgb(241, 106, 106);
 }
