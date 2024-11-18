@@ -27,7 +27,8 @@
 .botones li {
     padding: 0 1rem;
     list-style: none;
-    position: relative; /* Para el dropdown */
+    position: relative;
+    /* Para el dropdown */
 }
 
 .botones a {
@@ -35,7 +36,8 @@
     background-color: #fff;
     padding: 4px;
     border: solid 1px;
-    
+    border-radius: 5px;
+
 }
 
 .botones a:hover {
@@ -48,7 +50,8 @@
     position: absolute;
     background-color: #CCFFFF;
     min-width: 160px;
-    top: 100%; /* Coloca el dropdown debajo del botón */
+    top: 100%;
+    /* Coloca el dropdown debajo del botón */
     left: 0;
     margin: 5px 8px 8px 16px;
     z-index: 1;
@@ -122,32 +125,34 @@
     padding: 4px 2rem;
 }
 
-.servicios-flex{
+.servicios-flex {
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
 }
 
-.container-urgencias{
+.container-urgencias {
     max-width: 60%;
     padding: 1rem;
     margin: 0;
     text-align: justify;
 }
-.container-laboratorio{
+
+.container-laboratorio {
     text-align: justify;
     max-width: 60%;
     padding: 1rem;
     flex-direction: column;
 }
-.container-laboratorio img{
+
+.container-laboratorio img {
     margin: 30px 1px 1px 1px;
-    width:500px;
+    width: 500px;
     height: 270px;
 
 }
 
-.container-urgencias img{
+.container-urgencias img {
     margin: 30px 1px 1px 1px;
     width: 500px;
     height: 270px;
@@ -166,22 +171,29 @@
     padding: 2rem;
     border-radius: 4px;
 }
-.login input, button{
+
+.login input,
+button {
     margin: 10px;
     border: 1px solid;
 }
-.login button, input{
+
+.login button,
+input {
     padding: 4px;
-    
+
     background-color: #fff;
 }
-.login button:hover{
+
+.login button:hover {
     background-color: #40bea5;
 }
+
 .botones .login_cancel {
     background-color: rgb(193, 60, 60);
     color: #fff;
 }
+
 .botones .login_cancel:hover {
     background-color: rgb(241, 106, 106);
 }
