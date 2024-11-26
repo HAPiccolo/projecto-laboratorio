@@ -94,11 +94,12 @@ CREATE TABLE `profesionales` (
 LOCK TABLES `profesionales` WRITE;
 /*!40000 ALTER TABLE `profesionales` DISABLE KEYS */;
 INSERT INTO `profesionales` VALUES
-(32405036,'Horacio Alejandro','Piccolo','1','martes,miercoles,jueves','10:00:00','15:00:00');
+(32405036,'Horacio Alejandro','Piccolo','1','martes,miercoles,jueves','10:00:00','15:00:00'),
+(43825220,'Martin Leandro', 'Ranalli', '2', 'lunes,viernes', '08:00:00', '14:00:00');
 /*!40000 ALTER TABLE `profesionales` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
+--    
 -- Table structure for table `turnos`
 --
 

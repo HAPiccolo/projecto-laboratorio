@@ -12,7 +12,7 @@ if ($result->num_rows ===1){
    // Login correcto
 } else{
     // Login incorrecto
-    echo "Login incorrecto;"
+    echo "Login incorrecto";
 }
 
 $conn->close();

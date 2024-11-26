@@ -9,7 +9,7 @@
                         <li><a href="#">SERVICIOS</a></li>
                         <li><a href="./especialidades.php">ESPECIALIDADES</a></li>
                         <li><a href="./profesionales.php">PROFESIONALES</a></li>
-                        <li><a href="login.php">INGRESAR</a></li>
+                        <li><a href="./login.php">INGRESAR</a></li>
                     </ul>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 
 /* Reset */
-* {
+ * {
     margin: 0;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 .logo img {
-    width: 200px;
+    width: 160px;
     margin-left: 1rem;
 }
 
@@ -99,29 +99,48 @@ a::after {
 
 .container-contacto {
     display: flex;
+    flex-direction: column;
     width: 80%;
     padding: 1rem;
     margin-right: 1rem;
-    flex-direction: column;
     background-color: #4388CC;
     border: solid 3px #1B3280;
     margin-bottom: 3rem;
 }
 
-.container-contacto input {
-    width: auto;
-    margin: 1rem 0;
+.container-contacto h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container-contacto input,
+.container-contacto textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 0.7rem 0;
+    border-radius: 3px;
+    border: 1px solid #1B3280;
 }
 
 .container-contacto textarea {
-    height: 5rem;
+    height: 160px; /* Ajusta la altura del área de texto */
 }
 
 .container-contacto button {
-    margin: 1rem 0;
-    margin-left: auto;
-    padding: 4px 2rem;
+    padding: 10px 20px;
+    background-color: #1B3280;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
 }
+
+.container-contacto button:hover {
+    background-color: #4388CC;
+}
+
 
 .servicios-flex {
     display: flex;
@@ -199,7 +218,9 @@ td:hover{
     right: 0;
     /* Alinea la imagen en el lado izquierdo */
     width: 150px;
+    
 }
+
 
 
 /* Seccion turnos */

@@ -1,6 +1,11 @@
 <?php
 
-$mysqli = new $mysqli("localhost", "user", "password", "database");
+$host = "localhost";          
+$user = "root";   
+$password = "";  
+$database = "sanatorio"; 
+
+$mysqli = new mysqli( $host, $user, $password, $database);
 
 // Verifcamos la conexion
 if($mysqli->connect_error){

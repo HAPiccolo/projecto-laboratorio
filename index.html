@@ -57,10 +57,13 @@
                 </div>
                 <div class="container-contacto">
                     <h1>Contacto</h1>
-                    <input type="email" name="" id="" placeholder="Ingrese su direccion de email">
-                    <textarea placeholder="Mensaje"></textarea>
-                    <button>Enviar</button>
+                    <form action="./phpguardar_comentario.php" method="POST">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su dirección de email" required>
+                        <textarea name="comentario" id="id_comentario" placeholder="Mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
                 </div>
+                
             </div>
         </section>
 
