@@ -5,7 +5,9 @@
 
 <body>
     <?php include('./php/navbar.php'); ?>
-
+    <div class="texto-presentacion">
+      <p><i>Conoce a nuestros profesionales.</i></p>
+      </div>
     <div class="container">
 
         <table class="table-profesionales">
