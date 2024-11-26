@@ -196,11 +196,19 @@ td h3 {
     margin-bottom: 2rem;
 }
 
-/*
-td:hover{
-    background-color: rgba(97, 133, 212, 0.418);
+/* funciones de mostrar horarios*/
+
+.texto-oculto {
+    display: none;
+    /* oculta el texto */
+    background-color: #7cbced;
 }
-*/
+
+td:hover .texto-oculto {
+    display: block;
+    /* muestra el texto */
+
+}
 
 
 /* Imagenes de tarjetas */
@@ -271,7 +279,7 @@ form button {
     width: 10rem;
     height: 2rem;
     background-color: #1891ee;
-    border: solid #61a5d9 1px;
+    border: solid #1B3280 1px;
     border-radius: 2px;
     color: #fff;
     font-size: medium;
@@ -322,4 +330,58 @@ form button:hover {
 
 .profesionales_td p {
     font-size: small;
+}
+
+
+/* Presentacion */
+
+.presentacion {
+    text-align: center;
+    height: 90px;
+    /* fondo de la secction en gradiente */
+    background-image: linear-gradient(to bottom, #4388CC, #ffffff);
+    color: #fff;
+    /* bordeado a  la letras */
+    -webkit-text-stroke: 0.5px black;
+    margin-top: -2rem;
+}
+
+.texto-presentacion {
+    margin-top: 3rem;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* LOGIN */
+
+.container-login {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: #1B3280 solid 1px;
+    width: auto;
+    background-color: #4087be;
+    color: #fff;
+}
+.form-login button{
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+.newlogin{
+    
+    color: #fff;
+    font-size: 12px;
+    
 }

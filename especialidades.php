@@ -9,16 +9,25 @@
 
 
    <main>
+
+   <div class="texto-presentacion">
+      <p><i>Descubre la amplia gama de especialidades médicas a tu disposición.</i></p>
+      </div>
       <table>
          <tr>
             <td class="celda-con-imagen">
                <h3>Cardiologia</h3>
                <img src="./img/corazon.jpg" alt="" srcset="">
                <p>Ofrecemos chequeos cardiológicos completos para la detección temprana de enfermedades
-                  del corazon. Realizamos ecocardiogramas, electrocardiogramas y holter para evaluar la salud cardiovascular.
-                  Nuestro equipo esta comprometido con la prevencion y el manejo de factores de riesgo como la hipertencion y el colesterol alto.</p>
+                  del corazon. Realizamos ecocardiogramas, electrocardiogramas y holter para evaluar la salud
+                  cardiovascular.
+                  Nuestro equipo esta comprometido con la prevencion y el manejo de factores de riesgo como la
+                  hipertencion y el colesterol alto.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+            
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
+         
             </td>
             <td class="celda-con-imagen">
                <h3>Radiologia</h3>
@@ -29,7 +38,8 @@
                     Nuestro equipo de radiólogos expertos trabaja para detectar enfermedades de manera temprana
                      y proporcionar informes detallados que faciliten un tratamiento oportuno.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
 
             </td>
          </tr>
@@ -44,7 +54,8 @@
                      tempranos y completos. Nuestro equipo de profesionales altamente capacitados asegura un enfoque cercano
                       y confiable, garantizando que nuestros pacientes reciban la mejor atención posible.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
             </td>
             <td class="celda-con-imagen">
                <h3>Clinica</h3>
@@ -57,7 +68,8 @@
                     paciente reciba el mejor tratamiento adaptado a sus necesidades, garantizando una atención 
                     cercana y profesional.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
             </td>
          </tr>
          <tr>
@@ -70,7 +82,8 @@
                     especializadas. Nuestro equipo de profesionales altamente capacitados trabaja con rigor y cuidado para ofrecer resultados 
                     confiables, permitiendo a nuestros pacientes recibir un diagnóstico rápido y eficaz para un tratamiento oportuno.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
             </td>
             <td class="celda-con-imagen">
                <h3>Pediatria</h3>
@@ -82,7 +95,8 @@
                    el sistema inmunológico, las enfermedades comunes, y el seguimiento de enfermedades crónicas. Además, ofrecemos chequeos
                     regulares para garantizar el bienestar de los pequeños y brindar orientación a los padres sobre el cuidado adecuado de su hijo.</p>
                <br>
-               <p><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small></p>
+               <p class="texto-oculto"><small><b>Horarios de Atención:</b> Lunes a Viernes de 08:00 a 12:00 y de 14:00 a 18:00 hs.</small>
+               </p>
             </td>
          </tr>
       </table>

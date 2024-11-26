@@ -17,9 +17,10 @@
         <section class="contenedores">
             <div class="container-flex">
                 <div class="container-servicios">
-                    <h1>Nuestros servicios</h1>
+                    <h1 style="font-size:45px; color:#4388cc; -webkit-text-stroke: 0.5px #000;">Tu salud, nuestra prioridad.</h1>
+                    <hr>
 
-                    <p>Nos destacamos en la region por contar con uno de los equipos de <b>Laboratorio</b> mas modernos,
+                    <p style="margin-top:10px; text-align:justify;">Nos destacamos en la region por contar con uno de los equipos de <b>Laboratorio</b> mas modernos,
                         a su vez contamos con servicio de <b>Internacion</b> atendidos por los mejores profesionales del
                         area. Disponemos de consultorios a disposición para cualquier consulta y un area de
                         <b>Emergencias</b> adaptado para atender urgencias de cualquier tipo.
