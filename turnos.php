@@ -9,7 +9,7 @@
 
 
     <main>
-        <h1 class="saludo">Bienvenid@ usuario</h1>
+        <h1 class="saludo">Bienvenido al Registro de Turnos</h1>
         <div class="contenedor-turno">
             <div class="container-turno">
                 <h3>Solicitar turno</h3>
@@ -21,7 +21,7 @@
 
                     </select>
                     <select name="especialista">
-                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Cardiologia">Pedro Sanchez</option>
                         <option value="Analisis clinicos">Analisis clinicos</option>
                         <option value="Pediatria">Pediatria</option>
                     </select>
