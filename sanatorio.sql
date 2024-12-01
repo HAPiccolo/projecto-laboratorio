@@ -1,168 +1,202 @@
-/*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.11.9-MariaDB, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.1-5.fc41
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: sanatorio
--- ------------------------------------------------------
--- Server version	10.11.9-MariaDB
+-- Servidor: localhost
+-- Tiempo de generación: 01-12-2024 a las 00:38:06
+-- Versión del servidor: 10.11.10-MariaDB
+-- Versión de PHP: 8.3.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `comentarios`
+-- Base de datos: `sanatorio`
 --
 
-DROP TABLE IF EXISTS `comentarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
 CREATE TABLE `comentarios` (
-  `id_comentario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_comentario` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `comentario` text NOT NULL,
   `fecha_creacion` timestamp NULL DEFAULT current_timestamp(),
-  `estado` enum('leido','pendiente') DEFAULT NULL,
-  PRIMARY KEY (`id_comentario`)
+  `estado` enum('leido','pendiente') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `comentarios`
+-- Volcado de datos para la tabla `comentarios`
 --
 
-LOCK TABLES `comentarios` WRITE;
-/*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `comentarios` (`id_comentario`, `email`, `comentario`, `fecha_creacion`, `estado`) VALUES
+(1, 'horacio.alejandro.piccolo@gmail.com', 'test', '2024-11-27 20:53:28', 'pendiente'),
+(2, 'horacio.alejandro.piccolo@gmail.com', 'test2', '2024-11-27 20:56:07', 'pendiente'),
+(3, 'horacio.alejandro.piccolo@gmail.com', 'test3', '2024-11-27 20:57:40', 'pendiente');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `especialidades`
+-- Estructura de tabla para la tabla `especialidades`
 --
 
-DROP TABLE IF EXISTS `especialidades`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `especialidades` (
-  `id_especialidad` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_especialidad` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_especialidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id_especialidad` int(11) NOT NULL,
+  `nombre_especialidad` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `especialidades`
+-- Volcado de datos para la tabla `especialidades`
 --
 
-LOCK TABLES `especialidades` WRITE;
-/*!40000 ALTER TABLE `especialidades` DISABLE KEYS */;
-INSERT INTO `especialidades` VALUES
-(1,'Cirugia general'),
-(2,'Laboratorio');
-/*!40000 ALTER TABLE `especialidades` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `especialidades` (`id_especialidad`, `nombre_especialidad`) VALUES
+(1, 'Cirugia general'),
+(6, 'Clinico'),
+(5, 'Ecografia'),
+(2, 'Laboratorio'),
+(4, 'Pediatria'),
+(3, 'Radiologia');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `profesionales`
+-- Estructura de tabla para la tabla `profesionales`
 --
 
-DROP TABLE IF EXISTS `profesionales`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesionales` (
   `id_dni` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
   `especialidad` varchar(100) NOT NULL,
   `dias_laborales` set('lunes','martes','miercoles','jueves','viernes') DEFAULT NULL,
   `horario_inicio` time DEFAULT NULL,
-  `horario_fin` time DEFAULT NULL,
-  PRIMARY KEY (`id_dni`)
+  `horario_fin` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `profesionales`
+-- Estructura de tabla para la tabla `turnos`
 --
 
-LOCK TABLES `profesionales` WRITE;
-/*!40000 ALTER TABLE `profesionales` DISABLE KEYS */;
-INSERT INTO `profesionales` VALUES
-(32405036,'Horacio Alejandro','Piccolo','1','martes,miercoles,jueves','10:00:00','15:00:00'),
-(43825220,'Martin Leandro', 'Ranalli', '2', 'lunes,viernes', '08:00:00', '14:00:00');
-/*!40000 ALTER TABLE `profesionales` ENABLE KEYS */;
-UNLOCK TABLES;
-
---    
--- Table structure for table `turnos`
---
-
-DROP TABLE IF EXISTS `turnos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `turnos` (
-  `id_turno` int(11) NOT NULL AUTO_INCREMENT,
+  `id_turno` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_profesional` int(11) NOT NULL,
   `fecha` date DEFAULT NULL,
   `horario` time DEFAULT NULL,
-  `estado` enum('agendado','confirmado','cancelado') DEFAULT NULL,
-  PRIMARY KEY (`id_turno`),
-  KEY `fk_usuario` (`id_usuario`),
-  KEY `fk_profesional` (`id_profesional`),
-  CONSTRAINT `fk_profesional` FOREIGN KEY (`id_profesional`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE,
-  CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE
+  `estado` enum('agendado','confirmado','cancelado') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `turnos`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-LOCK TABLES `turnos` WRITE;
-/*!40000 ALTER TABLE `turnos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `turnos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuarios`
---
-
-DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
   `id_dni` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `contrasenia` varchar(100) NOT NULL,
-  `tipo_usuario` enum('paciente','profesional') DEFAULT NULL,
-  PRIMARY KEY (`id_dni`)
+  `tipo_usuario` enum('paciente','profesional') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `usuarios` (`id_dni`, `nombre`, `apellido`, `contrasenia`, `tipo_usuario`) VALUES
+(32405036, 'Horacio Alejandro', 'Piccolo', '$2y$10$ITU4gnVX4KsrYAQKSqSfm.S/TufrQszZgiYlKj5vt2DUiSmhWKFHG', 'profesional'),
+(54468644, 'Francesco', 'Piccolo', '$2y$10$eYyFMfW81gEbe8CJlQQQ5eSSl9K0IiHi9ZBXbhKa5kbIfPbLdbxee', 'paciente');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`);
+
+--
+-- Indices de la tabla `especialidades`
+--
+ALTER TABLE `especialidades`
+  ADD PRIMARY KEY (`id_especialidad`),
+  ADD KEY `nombre_especialidad` (`nombre_especialidad`);
+
+--
+-- Indices de la tabla `profesionales`
+--
+ALTER TABLE `profesionales`
+  ADD PRIMARY KEY (`id_dni`),
+  ADD KEY `especialidad` (`especialidad`);
+
+--
+-- Indices de la tabla `turnos`
+--
+ALTER TABLE `turnos`
+  ADD PRIMARY KEY (`id_turno`),
+  ADD KEY `fk_usuario` (`id_usuario`),
+  ADD KEY `fk_profesional` (`id_profesional`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_dni`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `especialidades`
+--
+ALTER TABLE `especialidades`
+  MODIFY `id_especialidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `turnos`
+--
+ALTER TABLE `turnos`
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `profesionales`
+--
+ALTER TABLE `profesionales`
+  ADD CONSTRAINT `profesionales_ibfk_1` FOREIGN KEY (`id_dni`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `profesionales_ibfk_2` FOREIGN KEY (`especialidad`) REFERENCES `especialidades` (`nombre_especialidad`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `turnos`
+--
+ALTER TABLE `turnos`
+  ADD CONSTRAINT `fk_profesional` FOREIGN KEY (`id_profesional`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-11-17 22:29:30
