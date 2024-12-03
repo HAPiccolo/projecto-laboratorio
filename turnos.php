@@ -72,6 +72,36 @@
     </main>
     <footer>
     </footer>
+
+
+    <!-- JS para manejar el DOM -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Manejador de evento para el cambio de especialidad
+            $('#especialidades').change(function() {
+                var especialidadId = $(this).val();
+                // Petición AJAX al servidor
+                $.ajax({
+                    url: './php/obtener_profesionales.php', // Ajusta la ruta al archivo PHP
+                    data: {
+                        especialidad: especialidadId
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        // Limpiar el select de profesionales
+                        $('#profesionales').empty();
+
+                        // Crear las opciones del select
+                        $.each(data, function(index, profesional) {
+                            $('#profesionales').append('<option value="' + profesional.id_dni + '">' + profesional.nombre + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
