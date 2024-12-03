@@ -13,7 +13,7 @@ if (!isset($_POST['especialidad'])) {
 $especialidadId = intval($_POST['especialidad']); // Sanitiza la entrada
 
 // Consulta SQL
-$sql = "SELECT u.id_dni, u.nombre FROM usuarios u
+$sql = "SELECT u.id_dni, u.nombre, u.apellido FROM usuarios u
         INNER JOIN profesionales p ON u.id_dni = p.id_dni
         WHERE p.especialidad = ?";
 $stmt = $mysqli->prepare($sql);
@@ -30,11 +30,11 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $options = '';
     while ($row = $result->fetch_assoc()) {
-        $options .= "<option value='" . htmlspecialchars($row['id_dni']) . "'>" . htmlspecialchars($row['nombre']) . "</option>";
+        $options .= "<option value='" . htmlspecialchars($row['id_dni']) . "'>" . htmlspecialchars($row['nombre'] . " " . $row['apellido']) . "</option>";
     }
     echo $options;
 } else {
-    echo '<option value="">No hay profesionales disponibles</option>';
+    echo '<option value="">Sin profesionales disponibles</option>';
 }
 
 $stmt->close();
