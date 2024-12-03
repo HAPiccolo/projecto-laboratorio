@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-12-2024 a las 00:38:06
+-- Tiempo de generación: 03-12-2024 a las 16:12:27
 -- Versión del servidor: 10.11.10-MariaDB
 -- Versión de PHP: 8.3.14
 
@@ -40,9 +40,7 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `email`, `comentario`, `fecha_creacion`, `estado`) VALUES
-(1, 'horacio.alejandro.piccolo@gmail.com', 'test', '2024-11-27 20:53:28', 'pendiente'),
-(2, 'horacio.alejandro.piccolo@gmail.com', 'test2', '2024-11-27 20:56:07', 'pendiente'),
-(3, 'horacio.alejandro.piccolo@gmail.com', 'test3', '2024-11-27 20:57:40', 'pendiente');
+(39, 'horacio.alejandro.piccolo@gmail.com', 'Quisiera saber si el Dr. Quintana medico general atiendo en la clinica, y si es asi, que dias lo hace. Muchas gracias', '2024-12-01 01:25:03', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -75,11 +73,18 @@ INSERT INTO `especialidades` (`id_especialidad`, `nombre_especialidad`) VALUES
 
 CREATE TABLE `profesionales` (
   `id_dni` int(11) NOT NULL,
-  `especialidad` varchar(100) NOT NULL,
+  `especialidad` int(11) NOT NULL,
   `dias_laborales` set('lunes','martes','miercoles','jueves','viernes') DEFAULT NULL,
   `horario_inicio` time DEFAULT NULL,
   `horario_fin` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `profesionales`
+--
+
+INSERT INTO `profesionales` (`id_dni`, `especialidad`, `dias_laborales`, `horario_inicio`, `horario_fin`) VALUES
+(32405036, 1, 'lunes,miercoles,viernes', '08:59:32', '11:59:32');
 
 -- --------------------------------------------------------
 
@@ -164,7 +169,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidades`
@@ -187,7 +192,7 @@ ALTER TABLE `turnos`
 --
 ALTER TABLE `profesionales`
   ADD CONSTRAINT `profesionales_ibfk_1` FOREIGN KEY (`id_dni`) REFERENCES `usuarios` (`id_dni`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `profesionales_ibfk_2` FOREIGN KEY (`especialidad`) REFERENCES `especialidades` (`nombre_especialidad`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `profesionales_ibfk_2` FOREIGN KEY (`especialidad`) REFERENCES `especialidades` (`id_especialidad`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `turnos`

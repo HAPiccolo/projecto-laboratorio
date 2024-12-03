@@ -1,22 +1,41 @@
 <?php
-// Conexión a la base de datos
-include('./php/conexion.php');
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: text/html; charset=utf-8');
 
-// Obtener el id de la especialidad desde la petición AJAX
-$especialidadId = $_POST['especialidad'];
+include('./conexion.php'); // Asegúrate de tener este archivo correctamente configurado
 
-// Consulta SQL para obtener los profesionales de la especialidad
+// Verifica que el ID de especialidad está presente
+if (!isset($_POST['especialidad'])) {
+    echo '<option value="">Error: No se recibió una especialidad</option>';
+    exit;
+}
+
+$especialidadId = intval($_POST['especialidad']); // Sanitiza la entrada
+
+// Consulta SQL
 $sql = "SELECT u.id_dni, u.nombre FROM usuarios u
         INNER JOIN profesionales p ON u.id_dni = p.id_dni
         WHERE p.especialidad = ?";
 $stmt = $mysqli->prepare($sql);
+if (!$stmt) {
+    echo '<option value="">Error en la consulta</option>';
+    exit;
+}
+
 $stmt->bind_param("i", $especialidadId);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Formatear los resultados como JSON
-$profesionales = [];
-while ($row = $result->fetch_assoc()) {
-    $profesionales[] = $row;
+// Verifica si hay resultados
+if ($result->num_rows > 0) {
+    $options = '';
+    while ($row = $result->fetch_assoc()) {
+        $options .= "<option value='" . htmlspecialchars($row['id_dni']) . "'>" . htmlspecialchars($row['nombre']) . "</option>";
+    }
+    echo $options;
+} else {
+    echo '<option value="">No hay profesionales disponibles</option>';
 }
-echo json_encode($profesionales);
+
+$stmt->close();
+$mysqli->close();

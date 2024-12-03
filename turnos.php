@@ -74,32 +74,27 @@
     </footer>
 
 
-    <!-- JS para manejar el DOM -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Manejador de evento para el cambio de especialidad
-            $('#especialidades').change(function() {
-                var especialidadId = $(this).val();
-                // Petición AJAX al servidor
-                $.ajax({
-                    url: './php/obtener_profesionales.php', // Ajusta la ruta al archivo PHP
-                    data: {
-                        especialidad: especialidadId
-                    },
-                    dataType: 'json',
-                    success: function(data) {
-                        // Limpiar el select de profesionales
-                        $('#profesionales').empty();
-
-                        // Crear las opciones del select
-                        $.each(data, function(index, profesional) {
-                            $('#profesionales').append('<option value="' + profesional.id_dni + '">' + profesional.nombre + '</option>');
-                        });
-                    }
-                });
-            });
+        // Función para cargar los profesionales al cambiar la especialidad
+        function cargarProfesionales(especialidadId) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', './php/obtener_profesionales.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    const profesionalesSelect = document.getElementById('profesionales');
+                    profesionalesSelect.innerHTML = this.responseText; // Cargar los resultados en el select
+                } else {
+                    console.error('Error al cargar los profesionales');
+                }
+            };
+            xhr.send('especialidad=' + encodeURIComponent(especialidadId));
+        }
+        document.getElementById('especialidades').addEventListener('change', function() {
+            const especialidadId = this.value;
+            cargarProfesionales(especialidadId);
         });
+    </script>
     </script>
 
 </body>
