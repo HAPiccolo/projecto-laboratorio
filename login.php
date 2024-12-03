@@ -17,7 +17,7 @@
                 <input type="password" name="password" id="" required>
                 <button type="">Ingresar</button>
                 <div class="newlogin">
-                    <a href="registro.php" class="newlogin">Registrarse</a> | <a href="#" class="newlogin">Recuperar cuenta</a>
+                    <a href="./registro.php" class="newlogin">Registrarse</a>
                 </div>
             </form>
 

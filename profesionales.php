@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +8,8 @@
 <body>
     <?php include('./php/navbar.php'); ?>
     <div class="texto-presentacion">
-      <p><i>Conoce a nuestros profesionales.</i></p>
-      </div>
+        <p><i>Conoce a nuestros profesionales.</i></p>
+    </div>
     <div class="container">
 
         <table class="table-profesionales">
@@ -22,7 +21,9 @@
 
                     <h3>ACOSTA BERNARDO EZEQ</h3>
                     <p>Cardiologo</p>
-                    <p>MP.3454</p>
+                    <p>MP.4554</p>
+
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
 
@@ -31,7 +32,8 @@
 
                     <h3>AGUIAR ANDREA</h3>
                     <p>Radiologa</p>
-                    <p>MP.3454</p>
+                    <p>MP.9874</p>
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
 
@@ -40,18 +42,20 @@
 
                     <h3>ARABIA JOSE</h3>
                     <p>Tecnico de Laboratorio</p>
-                    <p>MP.3454</p>
+                    <p>MP.1237</p>
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
             </tr>
 
             <tr>
-            <td class="profesionales_td">
+                <td class="profesionales_td">
                     <img src="./img/BAILONE-LUCIA-768x768.webp" alt="" srcset="">
 
                     <h3>BAILONE LUCIA</h3>
                     <p>Pediatra</p>
-                    <p>MP.3454</p>
+                    <p>MP.3783</p>
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
 
@@ -60,7 +64,8 @@
 
                     <h3>BREUZA LAURA</h3>
                     <p>Clinica</p>
-                    <p>MP.3454</p>
+                    <p>MP.7334</p>
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
 
@@ -69,12 +74,13 @@
 
                     <h3>ACOSTA BERNARDO EZEQ</h3>
                     <p>Ecografista</p>
-                    <p>MP.3454</p>
+                    <p>MP.3456</p>
+                    <button class="btn-turno">Solicitar Cita</button>
 
                 </td>
             </tr>
 
-            
+
 
         </table>
     </div>
